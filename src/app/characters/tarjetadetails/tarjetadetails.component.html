@@ -1,0 +1,28 @@
+<div class="contenedor">
+  <div class="card mb-5" style="max-width: 600px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img class="card-img-top" src="{{ characters.image }}" alt="..." />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ characters.name }}</h5>
+          <p class="card-text">
+            Status: {{characters.status}}<br>
+            Species: {{characters.species}}<br>
+            Gender: {{characters.gender}}<br>
+            Origin: {{characters.origin}}<br>
+            Location: {{characters.location}}<br>
+            Id Code: {{characters.id}}
+          </p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <button class="btn btn-warning mr-2" (click)="deleteCharacter()">Delete</button>
+          <button class="btn btn-light mr-2" *ngIf="characters.status == 'Alive'"
+            (click)="updateStatus('Dead')">Dead</button>
+          <button class="btn btn-light mr-2" *ngIf="characters.status == 'Dead'"
+            (click)="updateStatus('Alive')">Alive</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
