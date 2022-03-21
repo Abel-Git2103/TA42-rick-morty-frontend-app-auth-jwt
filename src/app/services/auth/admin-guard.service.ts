@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AdminGuardService {
+export class AdminGuardService implements CanActivate {
+  constructor(private router: Router) {}
 
-  constructor() { }
+  canActivate() {
+    const role = window.sessionStorage.getItem("auth-role");
+    console.log(role);
+
+    if (role != 'admin') {
+      console.log('No tienes privilegios de admin.');
+      this.router.navigate(['/home']);
+      return false;
+    }
+    return true;
+  }
 }

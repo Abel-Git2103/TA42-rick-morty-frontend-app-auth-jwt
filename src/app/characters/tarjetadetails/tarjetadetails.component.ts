@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CharactersService } from '../services/characters.service';
+import { CharactersService } from 'src/app/services/characters.service';
 
 @Component({
   selector: 'app-tarjetadetails',
@@ -26,11 +26,11 @@ export class TarjetadetailsComponent implements OnInit {
 
   deleteCharacter(): void {
     this.charactersService.delete(this.id).subscribe(
-      response => {
+      (response) => {
         console.log(response);
         this.router.navigate(['/tarjeta']);
       },
-      error => {
+      (error) => {
         console.log(error);
       }
     );
@@ -49,12 +49,12 @@ export class TarjetadetailsComponent implements OnInit {
     };
 
     this.charactersService.update(this.characters.id, data).subscribe(
-      response => {
+      (response) => {
         this.characters.status = status;
         console.log(response);
         this.router.navigate(['/tarjetadetails']);
       },
-      error => {
+      (error) => {
         console.log(error);
       }
     );

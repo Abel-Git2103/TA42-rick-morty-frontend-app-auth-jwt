@@ -22,6 +22,11 @@
           <a class="nav-link active letras" aria-current="page" routerLink="/about">About</a>
         </li>
       </ul>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a (click)="signOut()" class="nav-link active letras" aria-current="page" routerLink="/login">Logout</a>
+        </li>
+      </ul>
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>

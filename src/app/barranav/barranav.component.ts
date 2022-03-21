@@ -12,4 +12,7 @@ export class BarranavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  signOut(): void {
+    window.sessionStorage.clear();
+  }
 }
