@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
-import { LoginService } from 'src/app/services/auth/login.service';
+import { Component, OnInit } from "@angular/core";
+import { LoginService } from "src/app/services/auth/login.service";
+
+export class User {
+  id: number;
+  username: string;
+  password: string;
+  role: string;
+}
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
   user: User = {
     id: 0,
     username: '',
